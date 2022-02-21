@@ -25,13 +25,19 @@
 %Setup
 
 \newcommand*{\setname}[2]{\def\@firstname{#1}\def\@lastname{#2}}
+\newcommand*{\setstreet}[1]{\def\@street{#1}}
+\newcommand*{\setcity}[1]{\def\@city{#1}}
+\newcommand*{\setcountry}[1]{\def\@country{#1}}
+\newcommand*{\setnationality}[1]{\def\@nationality{#1}}
 \newcommand*{\setaddress}[1]{\def\@address{#1}}
+\newcommand*{\setbirthday}[1]{\def\@birthday{#1}}
 \newcommand*{\setmobile}[1]{\def\@mobile{#1}}
 \newcommand*{\setposition}[1]{\def\@position{#1}}
 \newcommand*{\setmail}[1]{\def\@mail{#1}}
 \newcommand*{\setthemecolor}[1]{\def\@themecolor{#1}}
 \newcommand*{\setlinkedinaccount}[1]{\def\@linkedinaccount{#1}}
 \newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
+\newcommand*{\sethomepage}[1]{\def\@homepage{#1}}
 
 %Setup for coverletter
 
@@ -51,11 +57,13 @@
 % can makebox also be used?
 \newcommand\headerview{
 \begin{minipage}{0.25\linewidth}
-    \profpic{0.22}{images/profilepicture}
+    \profpic{\linewidth}{images/profilepicture}
 \end{minipage}% 
 \hfill
 \begin{minipage}{0.45\linewidth}
-    \center \name \\[0.05cm] 
+    \flushright 
+    \name \\[0.15cm] 
+    \position \\[0.15cm] 
     \contact % address \ mobile \\ mail
 \end{minipage}
 }
@@ -65,7 +73,7 @@
 \newsavebox{\picbox}
 \newcommand{\profpic}[2]{%
     \savebox{\picbox}{%
-    \includegraphics[scale=#1]{#2}}% 
+    \includegraphics[width=#1]{#2}}% 
     \tikz\node [draw, circle,%
     line width=4pt, color=white,% 
     minimum width=\wd\picbox,minimum height=\ht\picbox,%
@@ -76,21 +84,29 @@
 %contactsubviews 
     
     
+\newcommand{\homepageview}{\href{\@homepage}{\faHome\ \footnotesize homepage}}
 \newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
 \newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
 
 \newcommand{\name}{%
-    {\large \@firstname \ \textsc{\@lastname}}
+    {\Large \@firstname \ \textsc{\@lastname}}
 }
 
 \newcommand{\contact}{%
-        {\small \@address  \cps \@mobile \\ \@mail%
-        \\%
-        \linkedinview \cps \githubview \\ 
-        } % 
+        {\small \it \@street \\ \@city, \@country \\ \@mail \\[.5em]*\@birthday \\ \@nationality \\
+        \homepageview \cps \linkedinview \cps \githubview \\
+        } %
+        % {\small \@address \\ \@birthday \\ \@mail %
+        % \@mobile
+        % \\%
+        % \linkedinview \cps \githubview \\
+        % } %
 }
 
-% Covverletterview
+\newcommand{\position}{%
+        {\small \it \@position \\ \@companyname} %
+}
+% Coverletterview
 
 \newcommand\coverletter[1]{ 
 \\  \coverlettersubview 
@@ -195,6 +211,6 @@ Position: & \@claimedposition \\
 \newcommand\createfootnote{%
   \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
     \renewcommand\footnoterule{\rule{0.3\linewidth}{0.5pt}}
-    \let\thefootnote\relax\footnote{\today\ / \href{https://github.com/muratcankaracabey/latex_cv}{source code}}}
+    \let\thefootnote\relax\footnote{\today \ / \href{https://github.com/muratcankaracabey/latex_cv}{source code}}}
 
 

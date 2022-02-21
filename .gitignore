@@ -7,3 +7,5 @@
 *.gz
 *.synctex(busy)
 *.synctex
+*.fdb_latexmk
+*.fls

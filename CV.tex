@@ -1,13 +1,22 @@
 \documentclass{muratcan_cv}
 
-\setname{Murat Can}{Karacabey}
-\setaddress{Munich/Germany}
-\setmobile{xx xxx xx xx}
-\setmail{muratcankaracabey@gmail.com}
-\setposition{Work Student} %ignored for now
-\setlinkedinaccount{https://www.linkedin.com/in/murat-can-karacabey-568a96b1/} %you can play with color of the template (red is also nice..)
-\setgithubaccount{https://github.com/muratcankaracabey} %you can play with color of the template (red is also nice..)
-\setthemecolor{red} %you can play with color of the template (red is also nice..)
+\setname{Mladen}{Ivkovic}
+\setstreet{Wehntalerstrasse 298}
+\setcity{8046 Zürich}
+\setcountry{Switzerland}
+\setnationality{Swiss}
+\setmobile{+41 76 573 52 56}
+\setmail{mladen.ivkovic@epfl.ch}
+\setposition{PhD Candidate}
+\setcompanyname{\'Ecole Polytechnique F\'ed\'erale de Lausanne}
+\setbirthday{12. June 1994}
+\setlinkedinaccount{https://www.linkedin.com/in/mladen-ivkovic/}
+\setgithubaccount{https://github.com/mladenivkovic}
+\sethomepage{https://obswww.unige.ch/~ivkovic}
+\setthemecolor{cyan} %you can play with color of the template (red is also nice..)
+
+\newcommand{\swift}{\href{https://swift.dur.ac.uk/}{\textsc{swift}}}
+\newcommand{\ramses}{\href{https://bitbucket.org/rteyssie/ramses/src/master/}{\textsc{ramses}}}
 
 \begin{document}
 %Set variables
@@ -19,81 +28,221 @@
 %
 % Summary
 \addblocktext{Summary}{%
-\lipsum[1][1-12]\ %replace this part with actual text
+    My background is in physics and astrophysics, with heavy emphasis on computational 
+    astrophysics and software development for high performance simulations and on-the-fly 
+    analysis. So far, I have worked on halo finding, mergertree building, fluid dynamics 
+    (using meshless methods, finite volume methods, and smoothed particle hydrodynamics), 
+    and radiative transfer in astrophysical codes that make use of MPI, OpenMP, and QuickSched.
+    I am looking for new challenges in the development, improvement, optimization, and extension 
+    of open source high performance scientific software! \\[.5em] \par
 }
-%
+
 %Education
-\section{Education} 
-    \datedexperience{Boğaziçi University}{2013-2018} 
-    \explanation{B.S in Computer Engineering} 
-     \explanationdetail{\coloredbullet\ % 
-     \lipsum[1][3-4]\par %replace this part with actual text
-     }
-    \datedexperience{Technical University of Munich}{2019-2022} 
-    \explanation{M.S in Informatics} 
+\section{Education and Employment}
+    \datedexperience{University of Zurich}{2012 - 2017}
+    \explanation{BSc in Physics (major) and Applied Informatics for Scientists (minor)}
     \explanationdetail{\coloredbullet\ %
-     \lipsum[1][3-4]\par %replace this part with actual text
-     }
+        Bachelor thesis on 
+        ``\href{https://obswww.unige.ch/~ivkovic/homepage/files/work/bachelor_thesis_mivkov.pdf}
+            {Halo- and Subhalo Finding in Cosmological N-Body Simulations}'' 
+        with Prof. Romain Teyssier\par
+    }
+    % \explanationdetail{\coloredbullet\ %
+    %     Main goal: Enable on-the-fly analysis of cosmological structures with \ramses\ and correct them
+    %     based on physical constraints \par
+    % }
+    \datedexperience{University of Zurich}{2016 - 2018}
+    \explanation{MSc in Theoretical Astrophysics and Cosmology}
+    \explanationdetail{\coloredbullet\ %
+        Master thesis on 
+        ``\href{https://obswww.unige.ch/~ivkovic/homepage/files/work/master_thesis_mivkov.pdf}
+            {Creating Mock Galaxy Catalogues from Dark Matter Simulations}'' 
+        with Prof. Romain Teyssier\par
+    }
+    % \explanationdetail{\coloredbullet\ %
+    %     Main goal: Enable on-the-fly generation of merger trees of cosmological structures  with \ramses\ \par
+    % }
+    \datedexperience{\'Ecole Polytechnique F\'ed\'erale de Lausanne}{2018 - today}
+    \explanation{PhD Candidate in Astrophysics}
+    \explanationdetail{\coloredbullet\ %
+        Thesis on ``Dwarf Galaxies in the Epoch of Reionization'' with Dr. Yves Revaz and Prof. Anne Verhamme \par
+    }
+    % \explanationdetail{\coloredbullet\ %
+    %     Main goal: Implementing a radiative transfer physics module from scratch into the
+    %     task-based code \swift\ and simulation of the reionization of dwarf galaxies in
+    %     the early universe
+    % }
+
 %
-% Experience
-\section{Experience}
-    %
-    \datedexperience{Intertech Inc.}{2014-Summer / Turkey} 
-    \explanation{Intern as android developer} 
-    %
-    \datedexperience{Velocity Inc.}{2015-Summer / Turkey} 
-    \explanation{Intern as Developer/Tester} 
-    %
-    \datedexperience{Akbank}{2018-2019 / Turkey} 
-    \explanation{Ios Developer} 
+% Teaching
+\section{Teaching}
+    \datedexperience{Zurich}{2011 - 2016}
+     \explanationdetail{\coloredbullet\ %
+        \textsc{Private tutor} in physics, mathematics, and German at elementary-, 
+        middle-, high-school and university level \par
+    }
+    \datedexperience{University of Zurich}{2014 - 2018}
     \explanationdetail{\coloredbullet\ %
-     \lipsum[1][1-2]\par %replace this part with actual text
-     }
-    %
-    \datedexperience{Mobile-Software AG}{2019-2020 / Germany} 
-    \explanation{Ios Developer} 
+        \textsc{Teaching Assistant} for basic physics courses, practical courses in 
+        physics, and introduction to programming \par
+    }
+    \datedexperience{\'Ecole Polytechnique F\'ed\'erale de Lausanne}{2019 - today}
+     \explanationdetail{\coloredbullet\ %
+        \textsc{Teaching Assistant} for MSc level lectures ``Stellar and Galactic 
+        Dynamics'' and ``Observational Cosmology'' \par
+    }
+
+%
+% Software
+\section{Software}
+    \datedexperience{Simulation}{}%
     \explanationdetail{\coloredbullet\ %
-     \lipsum[1][4-5]\par %replace this part with actual text
-     }
-    %
-    \datedexperience{BMW Autonomous Driving Campus}{2020-Now / Germany} 
-    \explanation{Working Student} 
+        Contributed to \ramses\ and \swift\ open source astrophysical high performance
+        simulation codes. 
+    }
     \explanationdetail{\coloredbullet\ %
-     \lipsum[1][3-4]\par %replace this part with actual text
-     }
+        Written a \href{https://github.com/mladenivkovic/mesh-hydro}{didactical finite volume hydrodynamics solver}.
+    }
+    \datedexperience{Visualisation and Analysis}{}%
+    \explanationdetail{\coloredbullet\ %
+        Contributed to the \href{https://github.com/SWIFTSIM/swiftsimio}{swiftsimio} and 
+        \href{https://gitlab.com/revaz/pNbody}{pNbody} python libraries.
+    }
+    \explanationdetail{\coloredbullet\ %
+        Written a python library for 
+        \href{https://pypi.org/project/astro-meshless-surfaces/}{visualisation of ``effective surfaces''} 
+        in mesh-free hydrodynamics methods
+    }
+
+%
+% Publications
+\section{Publications}
+    \newcommand{\publicationone}{%
+        Mladen Ivkovic, Romain Teyssier, 
+        \href{https://ui.adsabs.harvard.edu/abs/2022MNRAS.510..959I/abstract}{\textsc{acacia}: a new method to produce on-the-fly merger trees in the \textsc{ramses} code}, 
+        Monthly Notices of the Royal Astronomical Society, Volume 510, 
+        Issue 1, February 2022, Pages 959–979, 
+        \href{https://doi.org/10.1093/mnras/stab3329}{https://doi.org/10.1093/mnras/stab3329}
+    }
+    %
+    \newcommand{\listofpublications}{\publicationone}
+    %
+    \createbullets{\listofpublications}
+
+%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+% WATCH OUT FOR THIS IN THE FUTURE
+%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\newpage
+%
+% Talks
+\section{Talks}
+    \newcommand{\talkone}{%
+        SWIFTcon, Durham, November 2019: \textit{``On Meshless Methods in Astrophysics''}
+    }
+    %
+    \newcommand{\talktwo}{%
+        RASCAS-in-SPHINX workshop, Geneva, December 2019: \textit{``On Meshless Methods in Astrophysics''}
+    }
+    %
+    \newcommand{\listoftalks}{\talkone, \talktwo}
+    %
+    \createbullets{\listoftalks}
+
+%
+% Outreach
+\section{Outreach}
+    \datedexperience{University of Zurich}{2015 - 2017}
+     \explanationdetail{\coloredbullet\ %
+        Participated in university-wide public outreach events as a point of contact 
+        for people interested in studying physics \par
+    }
+    \datedexperience{\'Ecole Polytechnique F\'ed\'erale de Lausanne}{2018 - today}
+     \explanationdetail{\coloredbullet\ %
+        Participated in university-wide public outreach events as a point of 
+        contact for the general public \par 
+        % interested in astrophysics and in virtual reality 
+        % demonstrations of astrophysical objects and scales \par
+    }
+     \explanationdetail{\coloredbullet\ %
+        Guide on public and private visitations to the Geneva Observatory \par
+    }
+%
+% Grants
+\section{Grants}
+
+    \datedexperience{HPC-Europa3 Transnational Access programme}{2021}
+    \explanation{awarded travel grant to Leiden (NL) for 9 weeks and 100'000 CPU hours}
+    \explanationdetail{\coloredbullet\ %
+        to enhance the parallelisation of the radiative transfer module in \swift\ \par
+    }
 %
 % Skills
 \section{Skills}
     %
-    \newcommand{\skillone}{\createskill{Programming Languages}{\textbf{\emph{Experienced:}} \ \  Python \cpshalf Swift \ \ \textbf{\emph{Familiar:}} \ \  Javascript \cpshalf Objective-C \cpshalf Bash \cpshalf Java \cpshalf Scheme}}
+    \newcommand{\skillone}{\createskill{Programming Languages}{
+        \textbf{\emph{Experienced:}} \
+        Python \cpshalf 
+        C \cpshalf 
+        Fortran \cpshalf 
+        bash \cpshalf 
+        LaTeX \ \ 
+        \textbf{\emph{Familiar:}} \ 
+        C++ \cpshalf 
+        Java \cpshalf Mathematica
+        }
+    }
     %
-    \newcommand{\skilltwo}{\createskill{Software Development}{Programming Paradigms \cpshalf GIT \cpshalf CLI \cpshalf Agile Methodology \cpshalf DevOps Lifecycles}}
+    \newcommand{\skilltwo}{\createskill{Parallelisation}{
+        \textbf{\emph{Experienced:}} \
+        MPI \cpshalf 
+        OpenMP \cpshalf 
+        QuickSched \ 
+        \textbf{\emph{Familiar:}} \
+        openACC \cpshalf 
+        CUDA
+        }
+    }
     %
-    \newcommand{\skillthree}{\createskill{Frameworks \ \& \ Libraries}{Jupyter \cpshalf Matplotplib \cpshalf Numpy \cpshalf Pandas \cpshalf Scikit-learn \cpshalf Gym \cpshalf PyTorch \cpshalf Tensorflow}}
+    \newcommand{\skillthree}{\createskill{Software Development}{
+        \textbf{\emph{Experienced:}} \
+         git \cpshalf 
+         CLI \ 
+        \textbf{\emph{Familiar:}} \
+        GitLab CI/CD  \cpshalf
+        sphinx
+        }
+    }
     %
-    \newcommand{\skillfour}{\createskill{iOS Programming}{RxSwift \cpshalf PromiseKit \cpshalf CocoaPods \cpshalf Autolayout/DSLs}}
+    \newcommand{\skillfour}{\createskill{Languages}{
+        \textbf{\emph{Native:}} \ \  
+        German \cpshalf 
+        Swiss German \cpshalf 
+        Serbian \ \ 
+        \textbf{\emph{Fluent:}} \ \ 
+        English \ \ 
+        \textbf{\emph{Intermediate:}} \ \  
+        French 
+        }
+    }
     %
-    \newcommand{\skillfive}{\createskill{Languages}{\textbf{\emph{Native:}} \ \  Turkish \ \ \textbf{\emph{Fluent:}} \ \ English \ \ \textbf{\emph{Beginner:}} \ \  German }}
-    %
-    \createskills{\skillone, \skilltwo, \skillthree, \skillfour, \skillfive}
+    \createskills{\skillone, \skilltwo, \skillthree, \skillfour}
 %
-% Experience
+% Extra
 \section{Extra}
-    \newcommand{\extraone}{%
-    \lipsum[1][7-8]\par %replace this part with actual text
+    \datedexperience{Planet5, Zurich}{2012 - 2015}
+    \explanation{Volunteer work at the ``Metal Apocalypse'' concert series}
+    \explanationdetail{\coloredbullet\ %
+        as event manager, booking agent, allrounder, bartender, and photographer. \par
     }
     %
-    \newcommand{\extratwo}{%
-    \lipsum[1][9-10]\par %replace this part with actual text
+    \datedexperience{Mundwerk Kulturbiotop, Zurich}{2013 - 2022}
+    \explanation{Volunteer work at the youth oriented music club}
+    \explanationdetail{\coloredbullet\ %
+        as event manager, booking agent, bartender, allrounder, and Chef de Bar. \par
     }
-    %
-    \newcommand{\extrathree}{%
-    \lipsum[1][11-12]%replace this part with actual text
+    \explanationdetail{\coloredbullet\ %
+        Board member 2013 - 2017 \par
     }
-    %
-    \newcommand{\listofextras}{\extraone, \extratwo, \extrathree}
-    %
-    \createbullets{\listofextras}
 %
 %Footnote
 \createfootnote
