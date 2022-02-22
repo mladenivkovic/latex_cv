@@ -1,13 +1,17 @@
 % Created by Murat Can Karacabey
+% tweaked by Mladen
 % this is inspired by Michael Pollind's Awesome CV 
 % Created from scratch as a much simpler alternative to it to actually learn LaTeX.
 % Might be interpreted as an easier-to-edit or easier-to-understand-what-is-going-on version of it.
-\author{Murat Can Karacabey}
+\author{Murat Can Karacabey, Mladen Ivkovic}
 \RequirePackage[dvipsnames]{xcolor} % moved here I guess article class causes option clash with xcolor if used after loading the class
 \LoadClass[11pt]{article}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{muratcan_cv}[2020/04/15 Muratcan CV Class]
-\RequirePackage[sfdefault]{noto}
+\ProvidesClass{muratcan_cv_tweaked}[2020/04/15 Muratcan CV Class, tweaked by Mladen]
+% \RequirePackage[sfdefault]{noto}
+% \RequirePackage[sfdefault,book]{FiraSans}
+% \RequirePackage[sfdefault,light]{roboto}
+\RequirePackage[sfdefault]{atkinson}
 \RequirePackage{etoolbox}
 \RequirePackage{pgffor}
 \RequirePackage{titlesec}
@@ -44,6 +48,7 @@
 \newcommand*{\setcompanyname}[1]{\def\@companyname{#1}}
 \newcommand*{\setcontactperson}[1]{\def\@contactperson{#1}}
 \newcommand*{\setclaimedposition}[1]{\def\@claimedposition{#1}}
+\newcommand*{\setdate}[1]{\def\@date{#1}}
 
 
 \hypersetup{
@@ -64,7 +69,24 @@
     \flushright 
     \name \\[0.15cm] 
     \position \\[0.15cm] 
-    \contact % address \ mobile \\ mail
+    \contact \\[0.15cm] % address \ mobile \\ mail
+    \personaldata \\[0.15cm] % birthday, nationality
+    \contactlinks % github etc
+\end{minipage}
+}
+
+% can makebox also be used?
+\newcommand\coverletterheaderview{
+\begin{minipage}{0.15\linewidth}
+    \profpic{\linewidth}{images/profilepicture}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.45\linewidth}
+    \flushright 
+    \name \\[0.15cm] 
+    \position \\[0.15cm] 
+    \contact \\[0.15cm] % address \ mobile \\ mail
+    % \contactlinks % github etc
 \end{minipage}
 }
 
@@ -89,29 +111,37 @@
 \newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
 
 \newcommand{\name}{%
-    {\Large \@firstname \ \textsc{\@lastname}}
+    {\Large \color{\@themecolor} \@firstname \ \textsc{\@lastname}}
 }
 
 \newcommand{\contact}{%
-        {\small \it \@street \\ \@city, \@country \\ \@mail \\[.5em]*\@birthday \\ \@nationality \\
-        \homepageview \cps \linkedinview \cps \githubview \\
-        } %
-        % {\small \@address \\ \@birthday \\ \@mail %
-        % \@mobile
-        % \\%
-        % \linkedinview \cps \githubview \\
-        % } %
+        {\small \it \@street \\ \@city, \@country \\ \@mail}
+}
+
+\newcommand{\contactlinks}{%
+        {\small \it \homepageview \cps \linkedinview \cps \githubview}
 }
 
 \newcommand{\position}{%
         {\small \it \@position \\ \@companyname} %
 }
-% Coverletterview
 
+\newcommand{\personaldata}{%
+        {\small \it \@birthday \\ \@nationality}
+}
+
+\newcommand{\writedate}{%
+        \begin{flushright}
+            {\it \@date}
+        \end{flushright}
+}
+
+% Coverletterview
 \newcommand\coverletter[1]{ 
-\\  \coverlettersubview 
-\section{} \vspace{1ex} 
-\textbf{ Dear \@contactperson, \\[0.1cm]}
+% \\  \coverlettersubview
+\vspace{10ex}
+\writedate \vspace{6ex}
+\textbf{ Dear \@contactperson, \\[1em]}
   #1
 }
 
@@ -120,6 +150,12 @@
 Company: & \@companyname \\
 Position: & \@claimedposition \\
 \end{tabular}
+}
+
+\newcommand{\signature}{%
+    \vspace{4ex}
+    \noindent Sincerely, \\[2em]
+    \@firstname \ \@lastname
 }
 
 
