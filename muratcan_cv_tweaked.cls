@@ -26,7 +26,14 @@
 \RequirePackage{array}
 \pagestyle{empty}
 
-%Setup
+%--------------------------
+% Setup
+%--------------------------
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=cyan,
+}
 
 \newcommand*{\setname}[2]{\def\@firstname{#1}\def\@lastname{#2}}
 \newcommand*{\setstreet}[1]{\def\@street{#1}}
@@ -43,7 +50,12 @@
 \newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
 \newcommand*{\sethomepage}[1]{\def\@homepage{#1}}
 
-%Setup for coverletter
+
+
+
+%--------------------------
+% Setup for coverletter
+%--------------------------
 
 \newcommand*{\setcompanyname}[1]{\def\@companyname{#1}}
 \newcommand*{\setcontactperson}[1]{\def\@contactperson{#1}}
@@ -51,13 +63,13 @@
 \newcommand*{\setdate}[1]{\def\@date{#1}}
 
 
-\hypersetup{
-    colorlinks=true,
-    urlcolor=cyan,
-}
 
+
+
+%--------------------------
 % View commands
 % Header
+%--------------------------
 
 % can makebox also be used?
 \newcommand\headerview{
@@ -90,7 +102,12 @@
 \end{minipage}
 }
 
-%profilpicture
+
+
+
+%--------------------------
+% Profile Picture
+%--------------------------
 
 \newsavebox{\picbox}
 \newcommand{\profpic}[2]{%
@@ -102,13 +119,23 @@
     path picture={ \node at (path picture bounding box.center)% 
     {\usebox{\picbox}};}]% 
     {};}
-    
-%contactsubviews 
-    
-    
-\newcommand{\homepageview}{\href{\@homepage}{\faHome\ \footnotesize homepage}}
-\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
-\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~
+% contactsubviews 
+%~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+\newcommand{\homepageview}
+    {\href{\@homepage}{\faHome\ \footnotesize homepage}}
+
+\newcommand{\githubview}
+    {\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
+
+\newcommand{\linkedinview}
+    {\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
+
+
 
 \newcommand{\name}{%
     {\Large \color{\@themecolor} \@firstname \ \textsc{\@lastname}}
@@ -136,7 +163,17 @@
         \end{flushright}
 }
 
+\newcommand{\signature}{%
+    \vspace{4ex}
+    \noindent Sincerely, \\[2em]
+    \@firstname \ \@lastname
+}
+
+
+
+% ----------------------
 % Coverletterview
+% ----------------------
 \newcommand\coverletter[1]{ 
 % \\  \coverlettersubview
 \vspace{15ex}
@@ -152,25 +189,28 @@ Position: & \@claimedposition \\
 \end{tabular}
 }
 
-\newcommand{\signature}{%
-    \vspace{4ex}
-    \noindent Sincerely, \\[2em]
-    \@firstname \ \@lastname
-}
 
 
+
+%-------------------------
 % Helper commands
+%-------------------------
 
 \newcommand\ruleafter[1]{#1~{\color{black!60!\@themecolor}\hrulefill}} % a trick to put the line with <before> parameter in \titleformat
 
-%colorfulpipeseperator
+%~~~~~~~~~~~~~~~~~~~~~~~~~
+% colorfulpipeseperator
+%~~~~~~~~~~~~~~~~~~~~~~~~~
 
 \newcommand{\cps}{{\color{\@themecolor} \quad\textbar\quad}}
 \newcommand{\cpshalf}{{\color{\@themecolor} \hspace{0.2em}\textbar\hspace{0.2em}}}
 
 \newcommand{\coloredbullet}{{\color{\@themecolor} \textbullet}}
 
+
+%-------------------------
 % Edit section styles
+%-------------------------
 
 \titleformat{\section}      % Customise the \section command 
   {\large\bfseries\scshape\raggedright\color{\@themecolor}} % Make the \section headers large (\Large),
@@ -180,14 +220,19 @@ Position: & \@claimedposition \\
 
 \titlespacing*{\section}{-1pt}{0pt}{0pt}
 
+
+
+
+%-------------------------
 % Textview commands
+%-------------------------
 
 \newcommand{\experience}[2]{%
   \mbox { \hspace{1em} \scshape \textbf{#1} }%
 }
 
 \newcommand{\datetext}[1]{%
-{\itshape  \footnotesize \mdseries  \color{black!60!\@themecolor} #1 } 
+    {\itshape  \footnotesize \mdseries  \color{black!60!\@themecolor} #1 } 
 }
 
 \newcommand{\datedexperience}[2]{%
@@ -248,5 +293,4 @@ Position: & \@claimedposition \\
   \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
     \renewcommand\footnoterule{\rule{0.3\linewidth}{0.5pt}}
     \let\thefootnote\relax\footnote{\today \ / \href{https://github.com/muratcankaracabey/latex_cv}{source code}}}
-
 
