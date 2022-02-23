@@ -17,7 +17,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
 \RequirePackage{fontspec}
-\RequirePackage[left=0.75in,top=0.3in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\RequirePackage[left=0.75in,top=0.75in,right=0.75in,bottom=0.75in]{geometry} % Document margins
 \RequirePackage{hyperref}
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
@@ -139,7 +139,7 @@
 % Coverletterview
 \newcommand\coverletter[1]{ 
 % \\  \coverlettersubview
-\vspace{10ex}
+\vspace{15ex}
 \writedate \vspace{6ex}
 \textbf{ Dear \@contactperson, \\[1em]}
   #1
